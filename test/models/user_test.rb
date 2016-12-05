@@ -32,4 +32,15 @@ class UserTest < ActiveSupport::TestCase
   test 'email should not be too long' do
     @user.email = "a" * 255 + "@example.com"
   end
+
+  test 'email validation should accept valid email addresses' do
+    valid_addresses = %w[user@example.com USER@foo.COM A_US-ER@foo.bar.org
+                         first.last@foo.jp alice+bob@baz.cn]
+    valid_addresses.each do |valid_address|
+      @user.email = valid_address
+      # include optional 2nd arg to the assertion with a custom error msg
+      # which identifies the specific address causing the test to fail and not just the line number
+      assert @user.valid?, "#{valid_address.inspect} should be valid"
+    end
+  end
 end
