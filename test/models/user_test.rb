@@ -52,4 +52,13 @@ class UserTest < ActiveSupport::TestCase
       assert_not @user.valid?, "#{invalid_address.inspect} should be invalid"
     end
   end
+
+  test 'email addresses should be unique' do
+   # a record should be put into the database
+   # dup method copies the instance variables of user but not the objects they reference 
+   duplicate_user = @user.dup
+   duplicate_user.email = @user.email.upcase
+   @user.save
+   assert_not duplicate_user.valid?    
+  end
 end
