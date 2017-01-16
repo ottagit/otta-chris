@@ -14,7 +14,7 @@ class User < ApplicationRecord
   def User.digest(string)
    # Line for cost parameters and password digests from the secure
    # password source code 
-   cost = ActiveModel::SecurePassword.min_cost ? Bcrypt::Engine::MIN_COST : Bcrypt::Engine.cost
-   Bcrypt::Password.create(string, cost: cost)
+   cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
+   BCrypt::Password.create(string, cost: cost)
   end
 end
