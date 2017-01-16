@@ -9,4 +9,12 @@ class User < ApplicationRecord
   # but only applies to records with empty passwords
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }
+
+  #Returns the hash digest of the given string
+  def User.digest(string)
+   # Line for cost parameters and password digests from the secure
+   # password source code 
+   cost = ActiveModel::SecurePassword.min_cost ? Bcrypt::Engine::MIN_COST : Bcrypt::Engine.cost
+   Bcrypt::Password.create(string, cost: cost)
+  end
 end
