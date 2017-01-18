@@ -1,7 +1,9 @@
 class User < ApplicationRecord
+  attr_accessor :remember_token
+
   # use before_save callback to downcase the email attribute
   # before saving the user
-  before_save { email.downcase! }
+  before_save { self.email = email.downcase }
   validates :name, presence: true, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d-]+)*\.[a-z]+\z/i
   validates :email, presence: true, length: { maximum: 255 }, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
@@ -21,5 +23,11 @@ class User < ApplicationRecord
   # Returns a random token
   def User.new_token
    SecureRandom.urlsafe_base64
+  end
+
+  # Remember a user in the db for use in persistent sessions
+  def remember
+   self.remember_token = User.new_token
+   update_attribute(:remember_digest, User.digest(remember_token))
   end
 end
