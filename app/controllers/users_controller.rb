@@ -21,6 +21,10 @@ class UsersController < ApplicationController
    #debugger
   end
 
+  def edit
+   @user = User.find(params[:id])
+  end
+
   private
   # Auxiliary method to be used internally by the Users controller
    def user_params
