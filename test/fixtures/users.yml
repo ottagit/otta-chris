@@ -4,3 +4,8 @@ chris:
   name: Chris Otta
   email: ottacc66@gmail.com
   password_digest: <%= User.digest('atto052cc') %>
+
+ben:
+ name:  Ben Ouma
+ email: ben.ouma@gmail.com
+ password_digest: <%= User.digest('theoracle77') %> 
