@@ -10,7 +10,7 @@ class User < ApplicationRecord
   # the has_secure_pwd includes a presence validation
   # but only applies to records with empty passwords
   has_secure_password
-  validates :password, presence: true, length: { minimum: 6 }
+  validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
   # Returns the hash digest of the given string
   def User.digest(string)
