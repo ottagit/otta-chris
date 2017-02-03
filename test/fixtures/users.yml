@@ -8,4 +8,4 @@ chris:
 ben:
  name:  Ben Ouma
  email: ben.ouma@gmail.com
- password_digest: <%= User.digest('theoracle77') %> 
+ password_digest: <%= User.digest('atto052cc') %> 

@@ -26,11 +26,11 @@ class UsersEditTest < ActionDispatch::IntegrationTest
     get edit_user_path(@user)
     assert_template 'users/edit'
     name = "Chris Dabot"
-    email = "dabotea@gmail.com"
+    email = "ottachris13@gmail.com"
     patch user_path(@user), params: { user: { name: name,
                                               email: email,
                                               password:              "",
-                                              password_confirmation: ""} }
+                                              password_confirmation: "" } }
     assert_not flash.empty?
     assert_redirected_to @user
     @user.reload # reloads user's values from db, confirming a successful update
