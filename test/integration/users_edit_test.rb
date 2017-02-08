@@ -33,6 +33,8 @@ class UsersEditTest < ActionDispatch::IntegrationTest
                                               password_confirmation: "" } }
     assert_not flash.empty?
     assert_redirected_to @user
+    get login_path(@user)
+    assert_nil session[:forwarding_url]
     @user.reload # reloads user's values from db, confirming a successful update
     assert_equal name, @user.name
     assert_equal email, @user.email
