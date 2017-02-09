@@ -7,6 +7,9 @@ gem 'rails', '5.0.1'
 gem 'bcrypt'
 # Add the faker gem to make sample users
 gem 'faker',  '1.6.6'
+# Add will_paginate gems
+gem 'will_paginate',  '3.1.0'
+gem 'bootstrap-will_paginate',  '0.0.10'
 # Add the bootstrap-sass gem
 gem 'bootstrap-sass', '3.3.6'
 # Use sqlite3 as the database for Active Record
