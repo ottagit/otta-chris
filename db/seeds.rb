@@ -18,5 +18,5 @@ User.create!(name:  "Sisi Hub",
   User.create!(name: name,
                email: email,
                password:              password,
-               password_confiramtion: password)
+               password_confirmation: password)
 end
