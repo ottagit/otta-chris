@@ -5,6 +5,8 @@ source 'https://rubygems.org'
 gem 'rails', '5.0.1'
 # Add the bcrypt gem for use in hashing
 gem 'bcrypt'
+# Add the faker gem to make sample users
+gem 'faker',  '1.6.6'
 # Add the bootstrap-sass gem
 gem 'bootstrap-sass', '3.3.6'
 # Use sqlite3 as the database for Active Record
