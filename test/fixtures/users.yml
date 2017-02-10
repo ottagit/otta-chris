@@ -4,6 +4,7 @@ chris:
   name: Chris Otta
   email: ottacc66@gmail.com
   password_digest: <%= User.digest('atto052cc') %>
+  admin: true
 
 ben:
  name:  Ben Ouma
