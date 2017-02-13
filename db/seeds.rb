@@ -10,7 +10,7 @@ User.create!(name:  "Chris Otta",
              email: "ottacc66@gmail.com",
              password:                  "password",
              password_confirmation:     "password",
-             admin: true
+             admin: true,
              activated: true,
              activated_at: Time.zone.now)
 
