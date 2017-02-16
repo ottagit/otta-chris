@@ -7,7 +7,7 @@ module SessionsHelper
 
  # Remembers a user in a persistent session
  def remember(user)
-  # Generate a remember token and create save its digest to the db
+  # Generate a remember token and save its digest to the db
   user.remember
   # Use cookies to create permanent cookies for the user id 
   # and remember token
