@@ -7,8 +7,7 @@ class MicropostTest < ActiveSupport::TestCase
 
   def setup
    @user = users(:chris)
-   # This code is not idiomatically correct and therefore makes test to pass without validations( > rails 5)
-   @micropost = Micropost.new(content: "Lorem ipsum", user_id: @user.id)
+   @micropost =@user.microposts.build(content: "Lorem ipsum")
   end
  
   test "should be valid" do
