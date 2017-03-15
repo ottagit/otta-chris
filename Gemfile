@@ -7,6 +7,12 @@ gem 'rails', '5.0.1'
 gem 'bcrypt'
 # Add the faker gem to make sample users
 gem 'faker',  '1.6.6'
+# Add the carrierwave gem for image uploads
+gem 'carrierwave',  '0.11.2'
+# Add the mini_magick gem for image resizing
+gem 'mini_magick',  '4.5.1'
+# Add the fog gem for image upload in production
+gem 'fog',  '1.38.0'
 # Add will_paginate gems
 gem 'will_paginate',  '3.1.0'
 gem 'bootstrap-will_paginate',  '0.0.10'
