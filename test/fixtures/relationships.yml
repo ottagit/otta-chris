@@ -2,16 +2,16 @@
 
 one:
   follower: chris
-  followed: sumbua
+  followed: ben
 
 two:
   follower: chris
-  followed: archer
+  followed: lana
 
 three:
   follower: ben
   followed: chris
 
 four:
-  follower: lana
+  follower: sumbua
   followed: chris
