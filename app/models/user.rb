@@ -77,7 +77,8 @@ class User < ApplicationRecord
   # Defines a proto-feed
   def  feed
    # Escape the user id using '?' to prevent SQL injection
-   Micropost.where("user_id IN (?) OR user_id = ?", following_ids, id)
+   Micropost.where("user_id IN (:following_ids) OR user_id = :user_id",
+                   following_ids: following_ids, user_id: id)
   end
 
   # Follows a user
