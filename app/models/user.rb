@@ -16,7 +16,27 @@ class User < ApplicationRecord
   # but only applies to records with empty passwords
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
+  
+  # make model omniauthable
+  devise :omniauthable, :omniauth_providers => [:twitter]
 
+  # define from_omniauth_method
+  def self.from_omniauth(auth)
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      user.email = auth.info.email
+      #user.password = Devise.friendly_token[0.20]
+      user.name = auth.info.name
+    end
+  end
+
+  # implement new_with_session
+  def self.new_with_session(params, session)
+    super.tap do |user|
+      if data = session["devise.twitter_data"] && session["devise.twitter_data"]["extra"]["raw_info"]
+        user.email = data["email"] if user.email.blank?
+      end
+    end
+  end
   # Returns the hash digest of the given string
   def User.digest(string)
    # Line for cost parameters and password digests from the secure

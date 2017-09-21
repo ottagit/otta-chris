@@ -169,6 +169,15 @@ input {
   height: auto !important;
 }
 
+.omni {
+  text-align: center;
+}
+
+.omniauth-btns {
+  position: absolute;
+  top: 50%;
+}
+
 #error_explanation {
   color: red;
   ul {

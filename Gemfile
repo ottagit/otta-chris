@@ -7,6 +7,14 @@ gem 'rails', '5.0.1'
 gem 'bcrypt'
 # Add the faker gem to make sample users
 gem 'faker',  '1.6.6'
+# Add devise gem
+gem 'devise'
+# Add omniauth gem
+gem 'omniauth'
+# Add omniauth fb gem
+gem 'omniauth-facebook'
+# Add omniauth-twitter gem
+gem 'omniauth-twitter'
 # Add the carrierwave gem for image uploads
 gem 'carrierwave',  '0.11.2'
 # Add the mini_magick gem for image resizing
