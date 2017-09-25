@@ -1,6 +1,8 @@
-<div class="omni">
-  <button class="omniauth-btn"><%= link_to "Sign in with Twitter", user_twitter_omniauth_authorize_path %></button>
-<div>
+<br>
+  <div class="medium-6 medium-centered"> 
+  <%= link_to "Sign in with Twitter", user_twitter_omniauth_authorize_path, class: "btn btn-primary btn-sml" %>
+  </div>
+</br>
 
 <%= form_for(@user) do |f| %>
    <%= render 'shared/error_messages', object: f.object %>
